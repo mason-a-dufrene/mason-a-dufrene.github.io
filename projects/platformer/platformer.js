@@ -39,29 +39,33 @@ $(function () {
     //////////ONLY CHANGE BELOW THIS POINT///////////
     /////////////////////////////////////////////////
 
-    // TODO 1
-    // Create platforms
-    // You must decide the x position, y position, width, and height of the platforms
-    // example usage: createPlatform(x,y,width,height)
+    createPlatform(0, 725, 355, 20) //spawn platform
+    createPlatform(100, 0, 10, 600) //Wall
+    createPlatform(353, 645, 50, 100) //Jump 1
+    createPlatform(570, 530, 55, 220) //Jump 2
+    createPlatform(800, 510, 90, 15) //Jump 3 
+    createPlatform(545, 400, 50, 15) //Jump 4 left
+    createPlatform(250, 400, 40, 15) //Jump 5 left
+    createPlatform(100, 300, 30, 15) //Jump 6 right
+    createPlatform(1115, 400, 90, 15) //Jump 4 right
+    createPlatform(1350, 300, 60, 15) //Jump 5 right
+    createPlatform(1120, 200, 50, 15) //Jump 6 right
+    createPlatform(870, 190, 60, 15) //Jump 7 right
+    //createPlatform(100, 525, 50, 15) //not in final (testing help only)
+    //createPlatform(x,y,width,height)
 
+    createCollectable("diamond", 800, 470, 3, .5) //jump 3 collectable
+    createCollectable("diamond", 250, 200, 3, .5) //  jump 5 left collectable
+    createCollectable("diamond", 650, 100, 0, 0) // off jump 6 right colllectable
+    createCollectable("diamond", 250, 100, 0, 0) // off jump 6 left collectable
+    //collectable choices 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve';
+    //createCollectable(type, x, y, gravity, bounce)
 
-
-    
-    // TODO 2
-    // Create collectables
-    // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
-    // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
-    // example usage: createCollectable(type, x, y, gravity, bounce)
-
-
-
-
-    // TODO 3
-    // Create cannons
-    // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
-    // Your wall choices are: 'top' 'left' 'right' and 'bottom'
-    // example usage: createCannon(side, position, delay, width, height)
-
+    createCannon("right", 800, 500) // bottom cannon (active)
+    createCannon("right", 604, 900) // side Cannon 1 (active)
+    createCannon("top", 550, 1000) // Top Cannon 1(active)
+    createCannon("top", 1000, 1000) //Top Cannon 1(active)
+    //createCannon(side, position, delay, width, height)  height and with  not needed
 
 
 
