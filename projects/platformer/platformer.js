@@ -28,12 +28,12 @@ $(function () {
      * Comment the lines out to remove the grid
      */
 
-    // for (let i = 100; i < canvas.width; i += 100) {
-    //   createPlatform(i, canvas.height, -1, -canvas.height);
-    // }
-    // for (let i = 100; i < canvas.height; i += 100) {
-    //   createPlatform(canvas.width, i, -canvas.width, -1);
-    // }
+    for (let i = 100; i < canvas.width; i += 100) {
+       createPlatform(i, canvas.height, -1, -canvas.height);
+     }
+     for (let i = 100; i < canvas.height; i += 100) {
+       createPlatform(canvas.width, i, -canvas.width, -1);
+     }
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
@@ -54,17 +54,20 @@ $(function () {
     //createPlatform(100, 525, 50, 15) //not in final (testing help only)
     //createPlatform(x,y,width,height)
 
-    createCollectable("diamond", 800, 470, 3, .5) //jump 3 collectable
-    createCollectable("diamond", 250, 200, 3, .5) //  jump 5 left collectable
-    createCollectable("diamond", 650, 100, 0, 0) // off jump 6 right colllectable
-    createCollectable("diamond", 250, 100, 0, 0) // off jump 6 left collectable
+    createCollectable("minecraft", 800, 400, 3, .5) //jump 3 collectable
+    createCollectable("minecraft", 1350, 20, 0, 0) // off jump 6 left collectable
+    createCollectable("minecraft", 650, 100, 0, 0) // off jump 6 right colllectable
+    createCollectable("minecraft", 250, 200, 3, .5) //  jump 5 left collectable
+    createCollectable("minecraft", 250, 100, 0, 0) // off jump 6 left collectable
     //collectable choices 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve';
     //createCollectable(type, x, y, gravity, bounce)
 
     createCannon("right", 800, 500) // bottom cannon (active)
     createCannon("right", 604, 900) // side Cannon 1 (active)
     createCannon("top", 550, 1000) // Top Cannon 1(active)
-    createCannon("top", 1000, 1000) //Top Cannon 1(active)
+    createCannon("top", 1000, 1500) //Top Cannon 1(active)
+    createCannon("bottom", 900, 1500) //Top Cannon 1(active)
+    createCannon("bottom", 645, 1500) //Top Cannon 1(active)
     //createCannon(side, position, delay, width, height)  height and with  not needed
 
 
