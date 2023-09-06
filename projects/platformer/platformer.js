@@ -65,9 +65,15 @@ $(function () {
     createCannon("right", 800, 500) // bottom cannon (active)
     createCannon("right", 604, 900) // side Cannon 1 (active)
     createCannon("top", 550, 1000) // Top Cannon 1(active)
-    createCannon("top", 1000, 1500) //Top Cannon 1(active)
-    createCannon("bottom", 900, 1500) //Top Cannon 1(active)
-    createCannon("bottom", 645, 1500) //Top Cannon 1(active)
+    createCannon("top", 1000, 1500) //Top Cannon 2(active)
+    createCannon("top", 1010, 1500) //Top Cannon 2(active)
+    createCannon("top", 1020, 1500) //Top Cannon 2(active)
+    createCannon("bottom", 900, 1500) //floor Cannon 1(active)
+    createCannon("bottom", 910, 1500) //floor Cannon 2(active)
+    createCannon("bottom", 920, 1500) //floor Cannon 3(active)
+    createCannon("bottom", 645, 1500) //floor Cannon 4(active)
+    createCannon("bottom", 655, 1500) //floor Cannon 5(active)
+    createCannon("bottom", 665, 1500) //floor Cannon 6(active)
     //createCannon(side, position, delay, width, height)  height and with  not needed
 
 
