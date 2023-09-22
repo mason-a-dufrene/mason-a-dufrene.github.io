@@ -51,6 +51,7 @@
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css('left', newPositionX);
 				box.css('top', newPositionY);
+				box.css('background-color', colorStr)
 			}
 			
 			// changes the text displayed on the Box
@@ -69,8 +70,8 @@
 			var speed = 10;
 			var positionY = 1;
 			var speedY = 5;
-			var randNum = Math.random() * boardWidth;
-			var randNumY = Math.random() * boardheight;
+			var colorStr = "rbg(50, 25, 250)";
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -85,6 +86,7 @@
 				}else if(positionX < 0){
 					speed = -speed;
 				}
+
 				positionY = positionY + speedY;
 				if(positionY > boardHeight ){
 					speedY = -speedY;
@@ -92,40 +94,46 @@
 					speedY = -speedY;
 				}
 				moveBoxTo(positionX, positionY);
-				
+				box.css('background-color', colorStr)
 			};	
-
-
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionY = 0;
+			var randNum = Math.random() * boardWidth;
+			var randNumY = Math.random() * boardHeight;
+				positionX = randNum;
+				positionY = randNumY;
 
-				PositionX = randNum * boardWidth;
-				PositionY = randNumY * boardHeight;	
+
+
 				if (speed > 0){
-					speed = speed + 3;
+					speed = speed + 2;
 				}else if(speed < 0){
-					speed = speed - 3;
+					speed = speed - 2;
 				}
-				positionY = 0;
+
 				if(speedY > 0){
-					speedY = speedY + 3;
+					speedY = speedY + 2;
 				}else if(speedY < 0){
-					speedY = speedY - 3;
+					speedY = speedY - 2;
 				}	
+					
 				moveBoxTo(positionX, positionY);
 
 			//your code increce the points by 1
 				points = points + 1;
 				changeBoxText(points);
-
-
-
 			}
+			// function getRandomColor() {
+
+			// 	var randomBetween0and10 = Math.random() * 225;
+			// 	var colorStr = rbg(90, 0, 90);
+			// 	box.css('background-color', colorStr)
+
+			// }
 		})();
 	</script>
 </body>
