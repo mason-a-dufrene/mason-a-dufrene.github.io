@@ -20,13 +20,23 @@
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 30px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
 			background-image:url(img/image.jpeg);
 			background-repeat: no-repeat;
 			background-size: cover;
+		}
+		#point{
+			color: rgb(179, 0, 255);
+			background-color: white;
+			max-width: 20px;
+		}
+		#point2{
+			color: rgb(179, 0, 255);
+			background-color: white;
+			max-width: 100px;
 		}
 		
 	</style>
@@ -36,7 +46,10 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-
+	<div class=>
+		<h1 id="point2">Points:</h1>
+		<h1 id="point">0</h1>
+	</div>
 	<script>
 		(function(){
 			'use strict'
@@ -50,6 +63,7 @@
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			var boardHeight = jQuery(window).height(); //adds a Maximum Y-cordinate to the screen
+			var point = jQuery('#point')
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
 			
@@ -115,7 +129,7 @@
 			var randNumY = Math.random() * boardHeight;
 				positionX = randNum;
 				positionY = randNumY;
-
+				
 
 
 				if (speed > 0){
@@ -135,7 +149,9 @@
 			//your code increce the points by 1
 				points = points + 1;
 				changeBoxText(points);
+				point.text(points)
 			}
+
 			// function getRandomColor() {
 
 			// 	var randomBetween0and10 = Math.random() * 225;
