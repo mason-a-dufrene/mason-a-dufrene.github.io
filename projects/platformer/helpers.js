@@ -6,7 +6,9 @@
 function registerSetup(setup) {
   setupGame = setup;
 }
-
+var savedLevelw = parseInt(getCookie("lvlNum"))
+var nextlvlint = savedLevelw + 1
+var prevLvl = savedLevelw - 2
 function main() {
   ctx.clearRect(0, 0, 1400, 750); //erase the screen so you can draw everything in it's most current position
 
@@ -14,6 +16,20 @@ function main() {
     deathOfPlayer();
     return;
   }
+  if (
+    collectables[0].collected &&
+    collectables[1].collected &&
+    collectables[2].collected &&
+    collectables[3].collected &&
+    collectables[4].collected
+  ) {
+    collectables[1].collected = false
+    collectables[2].collected = false
+    setCookie("lvlNum", nextlvlint)
+    window.location.reload()
+  }
+
+
 
   drawPlatforms();
   drawProjectiles();
@@ -691,6 +707,15 @@ function handleKeyDown(e) {
   if (e.key === " ") {
     keyPress.space = true;
   }
+      if (e.key === "1" || e.key === "r") {
+      setCookie("lvlNum", 1)
+      window.location.reload()
+    }
+    if(e.key === "2"){
+      setCookie("lvlNum", 2)
+      window.location.reload()
+    }
+
 }
 
 function handleKeyUp(e) {
@@ -706,6 +731,7 @@ function handleKeyUp(e) {
       duckTimer = 8;
       frameIndex = 20;
     }
+
   }
   if (e.key === "ArrowRight" || e.key === "d") {
     keyPress.right = false;
