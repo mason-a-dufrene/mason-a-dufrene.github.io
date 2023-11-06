@@ -8,7 +8,6 @@ function registerSetup(setup) {
 }
 var savedLevelw = parseInt(getCookie("lvlNum"))
 var nextlvlint = savedLevelw + 1
-var prevLvl = savedLevelw - 2
 function main() {
   ctx.clearRect(0, 0, 1400, 750); //erase the screen so you can draw everything in it's most current position
 
@@ -16,6 +15,14 @@ function main() {
     deathOfPlayer();
     return;
   }
+  if(savedLevelw === 3){
+  if (collectables[0].collected){collectable[3].y = 300}
+  if (collectables[3].collected){collectable[1].y = 300}
+  if (collectables[1].collected){collectable[4].y = 300}
+  if (collectables[4].collected){collectable[2].y = 300}
+  if (collectables[2].collected){collectable[5].y = 300}
+  }
+
   if (
     collectables[0].collected &&
     collectables[1].collected &&
@@ -679,8 +686,9 @@ function keyboardControlActions() {
     player.speedX += walkAcceleration;
     player.facingRight = true;
   }
-  if (keyPress.space || keyPress.up) {
+  if (keyPress.up ) {
     if (player.onGround) {
+      playerJumpStrength = 12
       //this only lets you jump if you are on the ground
       player.speedY = player.speedY - playerJumpStrength;
       jumpTimer = 19; //this counts how many frames to have the jump last.
@@ -688,7 +696,18 @@ function keyboardControlActions() {
       frameIndex = 4;
     }
   }
-}
+
+  if (keyPress.space) {
+    if (player.onGround) {
+      playerJumpStrength = 17
+      //this only lets you jump if you are on the ground
+      player.speedY = player.speedY - playerJumpStrength;
+      jumpTimer = 19; //this counts how many frames to have the jump last.
+      player.onGround = false; //bug fix for jump animation, you have to change this or the jump animation doesn't work
+      frameIndex = 4;
+    }
+  }
+  }
 
 function handleKeyDown(e) {
   keyPress.any = true;
@@ -713,6 +732,10 @@ function handleKeyDown(e) {
     }
     if(e.key === "2"){
       setCookie("lvlNum", 2)
+      window.location.reload()
+    }
+    if(e.key === "3"){
+      setCookie("lvlNum", 3)
       window.location.reload()
     }
 

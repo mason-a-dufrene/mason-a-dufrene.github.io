@@ -73,9 +73,12 @@ $(function () {
         createCannon("bottom", 645, 1500) //floor Cannon 2-1
         createCannon("bottom", 655, 1500) //floor Cannon 2-2
         createCannon("bottom", 665, 1500) //floor Cannon 2-3
-        createCollectable("minecraft", 250, 100, 0, 0) //  jump 5 left collectable
-      }
-      else if (savedLevel === 2) {
+        createCollectable("minecraft", 800, 400, 0, 0) //jump 3 collectable
+        createCollectable("minecraft", 1350, 20, 0, 0) // off jump 6 right collectable
+        createCollectable("minecraft", 650, 100, 0, 0) // off jump 7 right colllectable
+        createCollectable("minecraft", 250, 300, 0, 0) //  jump 5 left collectable
+        createCollectable("minecraft", 250, 100, 0, 0) //  jump 6 left collectable
+      }else if (savedLevel === 2) {
 
         //level two spawns after 5th collectable is collected
         createPlatform(700, 0, 10, 150) //starting box left wall      #12
@@ -108,17 +111,30 @@ $(function () {
         createCannon("bottom", 645, 1500) //floor Cannon 2-1
         createCannon("bottom", 655, 1500) //floor Cannon 2-2
         createCannon("bottom", 665, 1500) //floor Cannon 2-3
+        createCollectable("minecraft", 800, 400, 0, 0) //jump 3 collectable
+        createCollectable("minecraft", 1350, 20, 0, 0) // off jump 6 right collectable
+        createCollectable("minecraft", 650, 100, 0, 0) // off jump 7 right colllectable
+        createCollectable("minecraft", 250, 300, 0, 0) //  jump 5 left collectable
         createCollectable("minecraft", 1050, 300, 0, 0) // off jump 6 left collectable
+      }else if (savedLevel === 3) {
+        createPlatform(0, 400, 1400, 10)
+        createCannon('right', 360, 1500)
+        createCannon('right', 380, 1500)
+        createCannon('right', 400, 1500)
+        createCannon('right', 420, 1500)
+        createCannon('right', 440, 1500)
+        createCannon('left', 340, 2000)
+        createCollectable("minecraft", 1050, 300, 0, 0) // 1 right
+        createCollectable("minecraft", 1050, 500, 0, 0) // 2 right
+        createCollectable("minecraft", 1050, 500, 0, 0) // 3 right
+        createCollectable("minecraft", 150, 500, 0, 0) // 1 left
+        createCollectable("minecraft", 150, 500, 0, 0) // 2 left
+        createCollectable("minecraft", 150, 500, 0, 0) // 3 left
 
-      }else if(savedLevel === 3){
-        setCookie("lvlNum", 1)
-        window.location.reload()
       }
+
     }
-    createCollectable("minecraft", 800, 400, 0, 0) //jump 3 collectable
-    createCollectable("minecraft", 1350, 20, 0, 0) // off jump 6 right collectable
-    createCollectable("minecraft", 650, 100, 0, 0) // off jump 7 right colllectable
-    createCollectable("minecraft", 250, 300, 0, 0) //  jump 5 left collectable
+
 
     // collectable choices 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve';
     // createCollectable(type, x, y, gravity, bounce)
