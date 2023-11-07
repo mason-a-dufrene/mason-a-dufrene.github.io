@@ -35,8 +35,11 @@ var init = function (window) {
         // TODO 3 / 7 : Call the drawCircle() function 
         var p = prompt("How many circles do you want?  (800 is max, 10 is min)")
         if(p > 800){
-            p = 3
-            alert("nice try")
+            p = 0
+            alert("Too many")
+        }else if(p < 10){
+            p = 0
+            alert("Not enough")
         }
         for(var i = 1 ; i < p; i++){
             drawCircle(i);
