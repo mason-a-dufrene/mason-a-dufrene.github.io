@@ -686,7 +686,8 @@ function keyboardControlActions() {
     player.speedX += walkAcceleration;
     player.facingRight = true;
   }
-  if (keyPress.up ) {
+
+  if (keyPress.up || keyPress.space) {
     if (player.onGround) {
       playerJumpStrength = 12
       //this only lets you jump if you are on the ground
@@ -697,16 +698,6 @@ function keyboardControlActions() {
     }
   }
 
-  if (keyPress.space) {
-    if (player.onGround) {
-      playerJumpStrength = 17
-      //this only lets you jump if you are on the ground
-      player.speedY = player.speedY - playerJumpStrength;
-      jumpTimer = 19; //this counts how many frames to have the jump last.
-      player.onGround = false; //bug fix for jump animation, you have to change this or the jump animation doesn't work
-      frameIndex = 4;
-    }
-  }
   }
 
 function handleKeyDown(e) {
