@@ -15,12 +15,11 @@ function main() {
     deathOfPlayer();
     return;
   }
-  if(savedLevelw === 3){
-  if (collectables[0].collected){collectable[3].y = 300}
-  if (collectables[3].collected){collectable[1].y = 300}
-  if (collectables[1].collected){collectable[4].y = 300}
-  if (collectables[4].collected){collectable[2].y = 300}
-  if (collectables[2].collected){collectable[5].y = 300}
+  if(savedLevelw === 1){
+    if(collectables[4].collected){
+      platforms[4].y === platforms[4] + 2
+    }
+  
   }
 
   if (

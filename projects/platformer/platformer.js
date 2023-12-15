@@ -116,22 +116,23 @@ $(function () {
         createCollectable("minecraft", 650, 100, 0, 0) // off jump 7 right colllectable
         createCollectable("minecraft", 250, 300, 0, 0) //  jump 5 left collectable
         createCollectable("minecraft", 1050, 300, 0, 0) // off jump 6 left collectable
-      }else if (savedLevel === 3) {
-        createPlatform(0, 400, 1400, 10)
-        createCannon('right', 360, 1500)
-        createCannon('right', 380, 1500)
-        createCannon('right', 400, 1500)
-        createCannon('right', 420, 1500)
-        createCannon('right', 440, 1500)
-        createCannon('left', 340, 2000)
-        createCollectable("minecraft", 1050, 300, 0, 0) // 1 right
-        createCollectable("minecraft", 1050, 500, 0, 0) // 2 right
-        createCollectable("minecraft", 1050, 500, 0, 0) // 3 right
-        createCollectable("minecraft", 150, 500, 0, 0) // 1 left
-        createCollectable("minecraft", 150, 500, 0, 0) // 2 left
-        createCollectable("minecraft", 150, 500, 0, 0) // 3 left
-
       }
+      // else if (savedLevel === 3) {
+      //   createPlatform(0, 400, 1400, 10)
+      //   createCannon('right', 360, 1500)
+      //   createCannon('right', 380, 1500)
+      //   createCannon('right', 400, 1500)
+      //   createCannon('right', 420, 1500)
+      //   createCannon('right', 440, 1500)
+      //   createCannon('left', 340, 2000)
+      //   createCollectable("minecraft", 1050, 300, 0, 0) // 1 right
+      //   createCollectable("minecraft", 1050, 500, 0, 0) // 2 right
+      //   createCollectable("minecraft", 1050, 500, 0, 0) // 3 right
+      //   createCollectable("minecraft", 150, 500, 0, 0) // 1 left
+      //   createCollectable("minecraft", 150, 500, 0, 0) // 2 left
+      //   createCollectable("minecraft", 150, 500, 0, 0) // 3 left
+
+      // }
 
     }
 
