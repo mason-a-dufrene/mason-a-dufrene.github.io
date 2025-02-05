@@ -39,7 +39,7 @@ $(document).ready(function () {
 // TODO 0 complete
   // TODO 1: create a new shape object and add it to the array
   var shape = {
-    color: "Blue",
+    color: "blue",
     shape: "circle",
     repeat: 3,
   }
