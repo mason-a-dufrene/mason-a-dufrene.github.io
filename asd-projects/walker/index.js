@@ -54,15 +54,15 @@ function redrawWalker(){
   // CORE LOGIC...
 function handleKeyDown(event) {
   if(event.which === KEY.ENTER){
-    walker.speedX = 5
+    console.log("enter pressed")
   }if(event.which === KEY.LEFT){
-    walker.speedX = -5
+    walker.speedX = 5
   }if(event.which === KEY.RIGHT){
-    console.log("Right pressed")
+    walker.speedX = -5
   }if(event.which === KEY.UP){
-    walker.speedY = 5
-  }if(event.which === KEY.DOWN){
     walker.speedY = -5
+  }if(event.which === KEY.DOWN){
+    walker.speedY = 5
   }
 }
 
