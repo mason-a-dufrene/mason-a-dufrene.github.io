@@ -111,7 +111,7 @@ function moveSnake() {
   column/row properties. 
   
   */
-  for (var i = snake.body.length - 1; i > 0; i--) {
+  for (var i = snake.body.length; i > 0; i--) {
     var snakeSquare = snake.body[i];
 
     var nextSnakeSquare = snake.body[i - 1];
@@ -313,7 +313,7 @@ function makeSnakeSquare(row, column) {
 function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
   activeKey = event.which;
-  console.log(activeKey);
+  // console.log(activeKey);
 }
 
 /* Given a gameSquare (which may be a snakeSquare or the apple), position
