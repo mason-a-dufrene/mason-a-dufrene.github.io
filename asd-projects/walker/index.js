@@ -29,6 +29,7 @@ function runProgram(){
   var interval = setInterval(newFrame, 60000);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);            // handle key down
   $(document).on('keyup', handleKeyUp);               // handle key up 
+  
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -48,24 +49,35 @@ function runProgram(){
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT) {
       walker.speedX = -5;
+      console.log("left")
+
     }if (event.which === KEY.UP) {
       walker.speedY = -5;
+      console.log("up")
+
     }if (event.which === KEY.RIGHT) {
       walker.speedX = 5;
+      console.log("right")
+      
     }if (event.which === KEY.DOWN) {
       walker.speedY = 5;
+      console.log("down")
     }
   }
 
   function handleKeyUp(event){
     if(event.which === KEY.LEFT) {
       walker.speedX = 0;
+      console.log("l released")
     }if(event.which === KEY.UP) {
       walker.speedY = 0;
+      console.log("u released")
     }if(event.which === KEY.RIGHT) {
       walker.speedX = 0;
+      console.log("r released")
     }if(event.which === KEY.DOWN) {
       walker.speedY = 0;
+      console.log("d released")
     }
   }
   ////////////////////////////////////////////////////////////////////////////////
@@ -103,12 +115,19 @@ function runProgram(){
 
     if(coordX < 0) {
       item.coordX -= speedX;
+       //left wall colision
+
     }if(coordY < 0) {
       item.coordY -= speedY;
+      //roof colision
+
     }if(coordX > width) {
       item.coordX -= speedX;
+      // right wall colision
+
     }if(coordY > height) {
       item.coordY -= speedY;
+      //floor colision
     }
   }
 }
