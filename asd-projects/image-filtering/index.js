@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-// applyFilter(reddify);
+applyFilter(reddify);
 applyFilterNoBackground(decreaceBlue);
 applyFilterNoBackground(increceGreenByBlue);
 
@@ -80,7 +80,7 @@ arr[RED] = 200;
 
 // TODO 6: Create more filter functions
 function decreaceBlue(blu){
- blu[BLUE] = keepInBounds(blu[BLUE])
+ blu[BLUE] = keepInBounds(blu[BLUE] -50)
 }
 function increceGreenByBlue(gren){
  gren[GREEN] = keepInBounds(gren[GREEN] + gren[BLUE])
