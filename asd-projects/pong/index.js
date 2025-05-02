@@ -27,7 +27,10 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    function moveBox() {
+      box.x += box.speedX; // update the position of the box along the x-axis
+      $(box.id).css("left", box.x); // draw the box in the new location, positionX pixels away from the "left"
+    }
 
   }
   
@@ -41,7 +44,14 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-
+  var box = {};
+  box.x = 0;
+  box.y = 100;
+  box.width = 200;
+  box.height = 200;
+  box.speedX = 1;
+  box.speedY = 1;
+  box.id = "#box";
   
   function endGame() {
     // stop the interval timer
