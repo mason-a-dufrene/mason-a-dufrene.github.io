@@ -39,3 +39,23 @@ body {
   top: 100px;
   left: 100px;
 }
+#score1 {
+/* appearence */
+  background-color: black;
+  color: paleturquoise;
+  width: 110px;
+  /* locatation */
+  position: absolute;
+  top: 450px;
+  left: 100px;
+}
+#score2 {
+  /* appearence */
+  background-color: pink;
+  color: red;
+  width: 110px;
+  /* locatation */
+  position: absolute;
+  top: 450px;
+  left: 200px;
+}
