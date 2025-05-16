@@ -46,7 +46,7 @@ function runProgram(){
   moveGameItem(leftPaddle);
   moveGameItem(rightPaddle);
   moveGameItem(ball);
-  wallCollision(leftPaddle);
+  wallCollision(leftPaddle);    //Hint: CODE GOES HERE
   wallCollision(rightPaddle);
   wallCollision(ball);
   redrawGameItem(leftPaddle);
@@ -99,7 +99,7 @@ function handleKeyDown(event) {
   ////////////////////////////////////////////////////////////////////////////////
     function makeGameItem(box){
   var item = {};
-  item.id = box;
+  item.id = box;         // makes each Div into a working component for the page, so it can be moved, and adjusted as we need
   item.x = parseFloat($(box).css("left"));
   item.y = parseFloat($(box).css("top"));
   item.width = $(box).width();
@@ -132,12 +132,12 @@ function handleKeyDown(event) {
 
     if (coordX < 0) {   //detects colision with left wall
       item.x -= speedX;
-      item.speedX = -speedX;
+      item.speedX = -speedX;   // prevents the ball from continuing through the wall, and breaking
         if(item.id === "#ball"){
         score2++;
         $("#score2").text("Right Score: " + score2);
         if(score2 === 11){
-          endGame();
+          endGame();           // when the score reaches 11, it calls endGame
           alert("Right Wins");
         }
         startBall();
@@ -153,10 +153,10 @@ function handleKeyDown(event) {
       item.speedX = -speedX;
           //detects and redirects colision with the right wall
         if(item.id === "#ball"){
-        score1++;
+        score1++;             // prevents the ball from continuing through the wall, and breaking
         $("#score1").text("Left Score: " + score1);
         if(score1 === 11){
-          endGame();
+          endGame();     // when the score reaches 11, it calls endGame
           alert("Player 1 Wins");
         }
         startBall();
@@ -215,7 +215,7 @@ function startBall(){   // start position of the ball, and direction it moves
     ball.speedY = randomNum = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
   }
   
-  function endGame() {
+  function endGame() {    // end the game
     // stop the interval timer
     clearInterval(interval);
     // turn off event handlers
